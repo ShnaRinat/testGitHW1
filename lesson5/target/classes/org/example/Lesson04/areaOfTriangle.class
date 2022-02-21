@@ -1,0 +1,19 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example.Lesson04;
+
+public class areaOfTriangle {
+    public areaOfTriangle() {
+    }
+
+    public static double calculateT(double a, double b, double c) {
+        double p = 0.0D;
+        double S = 0.0D;
+        p = (a + b + c) / 2.0D;
+        S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        return S;
+    }
+}
