@@ -1,0 +1,22 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example.Lesson04;
+
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+
+public class areaOfTriangleTest {
+    public areaOfTriangleTest() {
+    }
+
+    @Test
+    @DisplayName("Расчет треуголника ")
+    public void giveParamToFunction() {
+        double S = areaOfTriangle.calculateT(3.0D, 4.0D, 5.0D);
+        Assertions.assertEquals(6.0D, S);
+    }
+}
