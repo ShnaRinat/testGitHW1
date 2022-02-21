@@ -1,0 +1,19 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class AppTest {
+    public AppTest() {
+    }
+
+    @Test
+    public void shouldAnswerWithTrue() {
+        Assert.assertTrue(true);
+    }
+}
