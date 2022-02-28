@@ -1,0 +1,101 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example.Lesson06;
+
+import io.qameta.allure.Step;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class MainPage extends BasePage {
+    @FindBy(
+        xpath = "//input[@placeholder='логин']"
+    )
+    private WebElement loginInput;
+    @FindBy(
+        xpath = "//input[@placeholder='пароль']"
+    )
+    private WebElement passwordInput;
+    @FindBy(
+        xpath = "//button[@class='btn btn-default btn-xs']"
+    )
+    private WebElement loginButton;
+    @FindBy(
+        xpath = "//a[@href='/autor15']"
+    )
+    private WebElement authorButton;
+    @FindBy(
+        xpath = "//a[contains(text(),'Рейтинги')]"
+    )
+    private WebElement reitingButton;
+    @FindBy(
+        xpath = "//div[contains(@onclick, 'selShow(this,10879')]"
+    )
+    private WebElement bookButton;
+    @FindBy(
+        xpath = "//*[@id=\"me_7\"]"
+    )
+    private WebElement markBook;
+
+    public MainPage(WebDriver driver) {
+        super(driver);
+    }
+
+    @Step("Send login go login")
+    public MainPage fillLogin(String login) {
+        this.loginInput.sendKeys(new CharSequence[]{login});
+        return this;
+    }
+
+    @Step("Send password to password")
+    public MainPage fillPassword(String password) {
+        this.passwordInput.sendKeys(new CharSequence[]{password});
+        return this;
+    }
+
+    @Step("click on button Enter")
+    public MainPage clickLoginButton() {
+        try {
+            Thread.sleep(1000L);
+        } catch (InterruptedException var3) {
+            var3.printStackTrace();
+        }
+
+        this.loginButton.click();
+
+        try {
+            Thread.sleep(20000L);
+        } catch (InterruptedException var2) {
+            var2.printStackTrace();
+        }
+
+        return new MainPage(this.driver);
+    }
+
+    @Step("Move to top")
+    public MainPage clickOnTop() {
+        this.reitingButton.click();
+        return this;
+    }
+
+    @Step("Move to Autor")
+    public MainPage clickOnAutor() {
+        this.authorButton.click();
+        return this;
+    }
+
+    @Step("Move to Book")
+    public MainPage clickOnBook() {
+        this.bookButton.click();
+        return this;
+    }
+
+    @Step("Mark Book")
+    public MainPage clickOnMark() {
+        this.markBook.click();
+        return this;
+    }
+}
