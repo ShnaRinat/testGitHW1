@@ -1,0 +1,27 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.example.Lesson07;
+
+import io.qameta.allure.Allure;
+import java.io.ByteArrayInputStream;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.WebDriverListener;
+
+public class FantlabLogger implements WebDriverListener {
+    public FantlabLogger() {
+    }
+
+    public void beforeClick(WebElement element) {
+        Allure.step("try to click on .." + element.getText());
+    }
+
+    public void beforeQuit(WebDriver driver) {
+        Allure.addAttachment("Screen Shot", new ByteArrayInputStream((byte[])((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)));
+    }
+}
